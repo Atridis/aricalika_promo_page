@@ -22,11 +22,11 @@ jobs:
             # - name: Set up env
             #   run: cp .env.ci .env 
     
-            - name: Install NPM dependencies
-              run: npm ci
+            # - name: Install NPM dependencies
+            #   run: npm ci
     
-            - name: Build application
-              run: npm run build
+            # - name: Build application
+            #   run: npm run build
     
             - uses: sergeevpasha/yandex-cloud-s3-sync-github-actions@v0.1.2
               with:
