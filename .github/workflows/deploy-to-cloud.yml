@@ -7,9 +7,13 @@ on:
     #     branches:
     #         - master
 
+
+
 jobs:
     deploy:
         runs-on: ubuntu-latest
+        environment:
+            name: deploy
         strategy:
             matrix:
                 node-version: [16.x]
@@ -29,6 +33,7 @@ jobs:
             #   run: npm run build
     
             - uses: sergeevpasha/yandex-cloud-s3-sync-github-actions@v0.1.2
+
               with:
                 YANDEX_CLOUD_ACCESS_KEY_ID: ${{ secrets.YANDEX_CLOUD_ACCESS_KEY_ID }}
                 YANDEX_CLOUD_SECRET_ACCESS_KEY: ${{ secrets.YANDEX_CLOUD_SECRET_ACCESS_KEY }}
