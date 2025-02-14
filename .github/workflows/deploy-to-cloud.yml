@@ -21,10 +21,10 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
 
-            - name: Set up env
+            - name: Make site dir
               run: mkdir -p site
     
-            - name: Set up env
+            - name: Copy to site
               run: rsync -av --exclude=".*" ./ ./site
     
             - uses: sergeevpasha/yandex-cloud-s3-sync-github-actions@v0.1.2
