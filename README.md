@@ -6,4 +6,4 @@ Some thoughtful things will be written here in the future
 
 Other bits and pieces that are useful can be dropped here.
 
-- Invader game is taken from here and slightly changed[https://github.com/dwmkerr/spaceinvaders](https://github.com/dwmkerr/spaceinvaders)
+- Invader game is taken from here and slightly changed [https://github.com/dwmkerr/spaceinvaders](https://github.com/dwmkerr/spaceinvaders)
