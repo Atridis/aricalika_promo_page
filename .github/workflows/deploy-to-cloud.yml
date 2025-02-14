@@ -1,9 +1,11 @@
 name: Deploy to Yandex Cloud Object Storage
 
 on:
-    push:
-        branches:
-            - master
+    push
+    # !!! return this later 
+    # push:
+    #     branches:
+    #         - master
 
 jobs:
     deploy:
