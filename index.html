@@ -1,17 +1,96 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="css/core.css">
-    </head>
+<head>
+<title>Aricalika home page</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+.w3-row-padding img {margin-bottom: 12px}
+.bgimg {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('images/profile.jpg');
+  min-height: 100%;
+}
+</style>
+</head>
 <body>
 
-<h1>Hello from Aricalika</h1>
+<!-- Sidebar with image -->
+<nav class="w3-sidebar w3-hide-medium w3-hide-small" style="width:40%">
+    <div class="bgimg"></div>
+  </nav>
+    
+  <!-- Page Content -->
+  <div class="w3-main w3-padding-large" style="margin-left:40%">
+  
+    <!-- Header -->
+    <header class="w3-container w3-center" style="padding:128px 16px" id="home">
+      <h1 class="w3-jumbo"><b>Aricalika</b></h1>
+      <p>Streamer and Artist.</p>
+      <img src="images/profile.jpg" class="w3-image w3-hide-large w3-hide-small w3-round" style="display:block;width:60%;margin:auto;">
+      <img src="images/profile.jpg" class="w3-image w3-hide-large w3-hide-medium w3-round" width="1000" height="1333">
+    </header>
+  
+  
+    <!-- About Section -->
+    <div class="w3-content w3-justify w3-text-grey w3-padding-32" id="about">
+      <h2>About</h2>
+      <hr class="w3-opacity">
+      <p>I'm Sasha, I'm artist and streamer on Twitch.
+      </p>
+      <h3 class="w3-padding-16">Links</h3>
+      <button class="w3-button w3-light-grey w3-padding-large w3-section">
+        <i class="fa fa-twitch" style="font-size:24px;color:blue"></i> <a href="https://www.twitch.tv/aricalika" target="_blank">Twitch</a>
+      </button>
+      <button class="w3-button w3-light-grey w3-padding-large w3-section">
+        <i class="fa fa-youtube" style="font-size:24px;color:red"></i> <a href="https://www.youtube.com/@aricalika_twitch" target="_blank">Youtube</a>
+      </button>
+      <button class="w3-button w3-light-grey w3-padding-large w3-section">
+        <i class="fa fa-steam" style="font-size:24px;color:black"></i> <a href="https://steamcommunity.com/id/aricalika/" target="_blank">Steam</a>
+      </button>
+      <button class="w3-button w3-light-grey w3-padding-large w3-section">
+        <a href="https://discord.com/invite/B6EREmtrBc" target="_blank">Discord</a>
+      </button>
+      <button class="w3-button w3-light-grey w3-padding-large w3-section">
+        <a href="https://boosty.to/aricalika" target="_blank">Boosty</a>
+      </button>
 
-<h3><a href="https://www.twitch.tv/aricalika" target="_blank">Twitch</a></h3>
-<h3><a href="https://www.youtube.com/@aricalika_twitch" target="_blank">Youtube Highlights</a></h3>
-<form action="space_invaders/invaders.html">
-    <input type="submit" value="Lets play invader game" />
-</form>
+      <h3 class="w3-padding-16">Extra</h3>
+      <button class="w3-button w3-light-grey w3-padding-large w3-section">
+        <i class="fa fa-space-shuttle" style="font-size:24px;color:black"></i> <a href="space_invaders/invaders.html">Kill space invaders</a>
+      </button>
+      
+    <!-- End About Section -->
+    </div>
+    
+    <!-- Footer -->
+    <footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin:-24px">
+    <p class="w3-medium">Sourced by <i class="fa fa-github-alt" style="font-size:24px;color:grey"></i> <a href="https://github.com/Atridis/aricalika_promo_page" target="_blank" class="w3-hover-text-green">Github</a></p>
+    <!-- End footer -->
+    </footer>
+    
+  <!-- END PAGE CONTENT -->
+  </div>
+  
+  <script>
+  // Open and close sidebar
+  function openNav() {
+    document.getElementById("mySidebar").style.width = "60%";
+    document.getElementById("mySidebar").style.display = "block";
+  }
+  
+  function closeNav() {
+    document.getElementById("mySidebar").style.display = "none";
+  }
+  </script>
+  
+  </body>
 
-</body>
+
 </html>
