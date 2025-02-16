@@ -9,6 +9,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/fontawesome.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/brands.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/solid.min.css">
+
+
 <style> 
 body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 .w3-row-padding img {margin-bottom: 12px}
@@ -27,38 +29,68 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 <nav class="w3-sidebar w3-hide-medium w3-hide-small" style="width:40%">
     <div class="bgimg"></div>
   </nav>
+
+  <!-- Hidden Sidebar (reveals when clicked on menu icon)-->
+  <nav class="w3-sidebar w3-black w3-animate-right w3-xxlarge" style="display:none;padding-top:150px;right:0;z-index:2" id="mySidebar">
+    <a href="javascript:void(0)" onclick="closeNav()" class="w3-button w3-black w3-xxxlarge w3-display-topright" style="padding:0 12px;">
+      <i class="fa fa-remove"></i>
+    </a>
+    <div class="w3-bar-block w3-center">
+      <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Home</a>
+      <a href="#portfolio" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Portfolio</a>
+      <a href="#about" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">About</a>
+      <a href="#links" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Links</a>
+      <a href="#extra" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Extra</a>
+      <a href="#contact" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Contact</a>
+    </div>
+  </nav>
     
   <!-- Page Content -->
   <div class="w3-main w3-padding-large" style="margin-left:40%">
   
+    <!-- Menu icon to open sidebar -->
+    <span class="w3-button w3-top w3-white w3-xxlarge w3-text-grey w3-hover-text-black" style="width:auto;right:0;" onclick="openNav()"><i class="fa fa-bars"></i></span>
+
     <!-- Header -->
     <header class="w3-container w3-center" style="padding:128px 16px" id="home">
       <h1 class="w3-jumbo"><b>Aricalika</b></h1>
-      <p>Artist and Streamer</p>
+      <p>Художница и Стример</p>
       <img src="images/profile.jpg" class="w3-image w3-hide-large w3-hide-small w3-round" style="display:block;width:60%;margin:auto;">
       <img src="images/profile.jpg" class="w3-image w3-hide-large w3-hide-medium w3-round" width="799" height="1052">
     </header>
   
     <!-- Portfolio Section -->
-    <div class="w3-padding-32 w3-content" id="portfolio">
+    <div class="w3-padding-32 w3-content " id="portfolio">
       <h2 class="w3-text-grey">My Portfolio</h2>
       <hr class="w3-opacity">
 
       <!-- Grid for photos -->
-      <div class="w3-row-padding" style="margin:0 -16px">
-        <div class="w3-half">
-          <img src="images/anime.jpg" style="width:100%">
-          <img src="images/frog.jpg" style="width:100%">
-          <img src="images/leshak.jpg" style="width:100%">
+      <div class="w3-display-container">
+        
+        <div class="mySlides w3-animate-opacity w3-center">
+          <img class="w3-image" src="images/anime.jpg" style="width:50%">
+        </div>
+        <div class="mySlides w3-animate-opacity w3-center">
+          <img class="w3-image" src="images/nahida.jpg" style="width:50%">
+        </div>
+        <div class="mySlides w3-animate-opacity w3-center">
+          <img class="w3-image" src="images/frog.jpg" style="width:60%">
+        </div>
+        <div class="mySlides w3-animate-opacity w3-center">
+          <img class="w3-image" src="images/lips.jpg" style="width:75%">
+        </div>
+        <div class="mySlides w3-animate-opacity w3-center">
+          <img class="w3-image" src="images/leshak.jpg" style="width:96%">
+        </div>
+        <div class="mySlides w3-animate-opacity w3-center">
+          <img class="w3-image" src="images/cover.jpg" style="width:75%">
         </div>
 
-        <div class="w3-half">
-          <img src="images/lips.jpg" style="width:100%">
-          <img src="images/nahida.jpg" style="width:100%">
-          <img src="images/cover.jpg" style="width:100%">
-        </div>
-      <!-- End photo grid -->
-      </div>
+        <a class="w3-button w3-black w3-display-right w3-margin-right w3-round w3-hide-small w3-hover-light-grey" onclick="plusDivs(1)">Next <i class="fa fa-angle-right"></i></a>
+        <a class="w3-button w3-block w3-black w3-hide-large w3-hide-medium" onclick="plusDivs(1)">Next <i class="fa fa-angle-right"></i></a>
+        
+      </div> 
+
     <!-- End Portfolio Section -->
     </div>
   
@@ -66,12 +98,19 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     <div class="w3-content w3-justify w3-text-grey w3-padding-32" id="about">
       <h2>About</h2>
       <hr class="w3-opacity">
-      <p>Hello everyone!
-        My name is Sasha, I'm from Belarus.
-        I'm full-time streamer and I love to do all sorts of things .
-        I want to show you my creativity, communicate with you and entertain you with my passage in games, that I have not played before. ^_^
+      <p>Здравствуй, всяк сюда входящий!
+        Зовут меня Саша, я из Беларуси.
+        Я - фулл-тайм стример и люблю творить всякое.
+        Пришла общаться с вами, учиться играть, делиться улыбками и миром. ^^
       </p>
-      <h3 class="w3-padding-16">Links</h3>
+      
+    <!-- End About Section -->
+    </div>
+
+    <!-- Links Section -->
+    <div class="w3-content w3-justify w3-text-grey w3-padding-32" id="links">
+      <h2>Links</h2>
+      <hr class="w3-opacity">
       <button class="w3-button w3-light-grey w3-padding-large w3-section" style="width:100%">
         <i class="fab fa-twitch fa-lg" style="color:blue" ></i><a href="https://www.twitch.tv/aricalika" target="_blank"> Twitch</a>
       </button>
@@ -93,27 +132,31 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
       <button class="w3-button w3-light-grey w3-padding-large w3-section" style="width:100%">
         <i class="fa-solid fa-b fa-lg" style="color:blue"></i> <a href="https://boosty.to/aricalika" target="_blank">Boosty</a>
       </button>
+    <!-- End Links Section -->
+    </div>
 
-      <h3 class="w3-padding-16">Extra</h3>
+    <!-- Extra Section -->
+    <div class="w3-content w3-justify w3-text-grey w3-padding-32" id="extra">
+      <h2>Extra</h2>
+      <hr class="w3-opacity">
+
       <button class="w3-button w3-light-grey w3-padding-large w3-section" style="width:100%">
         <i class="fa-solid fa-rocket fa-lg" style="color:blue"></i> <a href="space_invaders/invaders.html">Kill space invaders</a>
       </button>
+    <!-- End Extra Section -->
+    </div>
+
+    <!-- Contact Section -->
+    <div class="w3-padding-32 w3-content w3-text-grey" id="contact" style="margin-bottom:64px">
+      <h2>Contact Me</h2>
+      <hr class="w3-opacity">
+
+      <div class="w3-section">
+        <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: msaricalika@gmail.com</p>
+      </div>
       
-    <!-- End About Section -->
+    <!-- End Contact Section -->
     </div>
-
-
-      <!-- Contact Section -->
-  <div class="w3-padding-32 w3-content w3-text-grey" id="contact" style="margin-bottom:64px">
-    <h2>Contact Me</h2>
-    <hr class="w3-opacity">
-
-    <div class="w3-section">
-      <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: msaricalika@gmail.com</p>
-    </div>
-    
-  <!-- End Contact Section -->
-  </div>
     
     <!-- Footer -->
     <footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin:-24px">
@@ -134,6 +177,26 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
   function closeNav() {
     document.getElementById("mySidebar").style.display = "none";
   }
+
+  // Slideshow
+  var slideIndex = 1;
+  showDivs(slideIndex);
+  
+  function plusDivs(n) {
+    showDivs(slideIndex += n);
+  }
+  
+  function showDivs(n) {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    if (n > x.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = x.length}
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";  
+    }
+    x[slideIndex-1].style.display = "block";  
+  }
+
   </script>
   
   </body>
