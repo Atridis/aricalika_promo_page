@@ -1,4 +1,4 @@
-name: Deploy to Yandex Cloud Object Storage
+name: Deploy to Testing
 
 on:
     push
