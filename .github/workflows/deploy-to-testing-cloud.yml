@@ -1,0 +1,33 @@
+name: Deploy to Yandex Cloud Object Storage
+
+on:
+    push
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        environment:
+            name: testing-deploy
+        strategy:
+            matrix:
+                node-version: [16.x]
+        steps:
+            - uses: actions/checkout@v3
+            - uses: actions/setup-node@v3
+              with:
+                  node-version: ${{ matrix.node-version }}
+
+            - name: Make site dir
+              run: mkdir -p site
+    
+            - name: Copy to site
+              run: rsync -av --exclude=".*" ./ ./site
+    
+            - uses: sergeevpasha/yandex-cloud-s3-sync-github-actions@v0.1.2
+
+              with:
+                YANDEX_CLOUD_ACCESS_KEY_ID: ${{ secrets.YANDEX_CLOUD_ACCESS_KEY_ID }}
+                YANDEX_CLOUD_SECRET_ACCESS_KEY: ${{ secrets.YANDEX_CLOUD_SECRET_ACCESS_KEY }}
+                YANDEX_CLOUD_BUCKET_NAME: ${{ secrets.YANDEX_CLOUD_BUCKET_NAME }}
+                PATH: "./site"
+                CLEAR: true
