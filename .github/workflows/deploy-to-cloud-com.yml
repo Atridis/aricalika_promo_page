@@ -22,7 +22,7 @@ jobs:
               run: rm -f sitemap-ru.txt
 
             - name: Rename sitemap ru
-              run: cp sitemap-com.txt sitemap.txt
+              run: mv sitemap-com.txt sitemap.txt
 
             - name: Make site dir
               run: mkdir -p site
