@@ -17,12 +17,6 @@ jobs:
             - uses: actions/setup-node@v3
               with:
                   node-version: ${{ matrix.node-version }}
-                  
-            - name: Remove sitemap com
-              run: rm -f sitemap-com.txt
-
-            - name: Rename sitemap ru
-              run: mv sitemap-ru.txt sitemap.txt
 
             - name: Make site dir
               run: mkdir -p site
@@ -35,13 +29,5 @@ jobs:
                 YANDEX_CLOUD_ACCESS_KEY_ID: ${{ secrets.YANDEX_CLOUD_ACCESS_KEY_ID }}
                 YANDEX_CLOUD_SECRET_ACCESS_KEY: ${{ secrets.YANDEX_CLOUD_SECRET_ACCESS_KEY }}
                 YANDEX_CLOUD_BUCKET_NAME: ${{ secrets.YANDEX_CLOUD_BUCKET_NAME }}
-                PATH: "./site"
-                CLEAR: true
-                
-            - uses: sergeevpasha/yandex-cloud-s3-sync-github-actions@v0.1.2
-              with:
-                YANDEX_CLOUD_ACCESS_KEY_ID: ${{ secrets.YANDEX_CLOUD_ACCESS_KEY_ID }}
-                YANDEX_CLOUD_SECRET_ACCESS_KEY: ${{ secrets.YANDEX_CLOUD_SECRET_ACCESS_KEY }}
-                YANDEX_CLOUD_BUCKET_NAME: ${{ secrets.YANDEX_CLOUD_BUCKET_NAME_2 }}
                 PATH: "./site"
                 CLEAR: true
