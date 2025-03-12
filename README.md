@@ -1,6 +1,6 @@
 # Aricalika promo page
 
-See it Live: [https://www.aricalika.ru/](https://www.aricalika.ru/)
+See it Live: [https://aricalika.com/](https://aricalika.com/)
 
 ## References
 
